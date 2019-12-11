@@ -11,9 +11,9 @@ html(lang="en")
         meta(name="description" content=pageDescContent)
         link(rel="stylesheet", href="public/css/styles.css")
     body
+        header.page-wrapper__template__header
+            include _includes/navbar
         .wrapper
-            header.page-wrapper__template__header
-                //- include _includes/navbar
             //- .page-wrapper__template__content(class=page)
             .page-wrapper__template__content()
                 block content

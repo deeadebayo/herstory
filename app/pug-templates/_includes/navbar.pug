@@ -1,10 +1,8 @@
 .navbar
-    .navbar__logo 
-        //- logo is declared in a new class
-        a#logo.logo--wrap(href='/')
-            include ../_svg-code/logo--main
+    a.navbar__logo(href='/')
+        img.logo(src='public/img/Logo.png')
     .navbar__links
-        //- make the nav links the dark grey/black color
         ul
-            li: a(href="/about.html") Start Over
-            li: a(href="#footer") Contact
+            li: a.link(href="/about.html") Start Over
+            li: a.link(href="/about.html") Give Up
+            li: a.link(href="#footer") Credits
