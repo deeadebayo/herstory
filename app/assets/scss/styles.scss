@@ -1,6 +1,23 @@
 // Our base
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:700&display=swap');
 @import 'modules/avatar';
 @import 'modules/index';
+
+.wrapper {
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.page-wrapper__template__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
 
 // Third Party
 // ---maybe add some bootstrap if need
