@@ -7,6 +7,15 @@ append startScript
     - var namespace = 'home'
     - var avatar = ['Frida with the good hair', 'joan', 'maya']
 
+
 block content
-    h1= avatar[0]
+    head
+
+        h1= avatar
+        div.container
+            img(src='public/img/FridaKahloImage.jpg' alt='logo')
+            p This is a trivia game about influential women of history.
+            button.button(style='vertical-align:middle')
+                span START
+
 block endScript
