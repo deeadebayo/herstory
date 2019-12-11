@@ -5,7 +5,40 @@ append startScript
     - var keywordContent = "Some SEO stuff" // The template page has a variable called keywordContent where this string writes into
 
 block content
-    img(src="public/img/Logo.png", alt="Logo")
-
-
-    img(src="public/img/Frida.png", alt="Frida Kahlo")
+    img(src='public/img/Logo.png' alt='logo')
+    div.avatar-selector
+        section
+            div.selector-img
+                img(src='public/img/Frida.png' alt='Frida')
+                h4 Frida Kahlo
+            div.selector-text
+                p.
+                    Mexican artist Frida Kahlo is an extremely important feminist figure.
+                    Though she was born in the early 1900’s, she was openly radical,
+                    spoke out about being disabled after a bus accident, and took both male 
+                    and female lovers. Her many self-portraits comment on the female form and
+                    utilize traditional Mexican themes and colors.
+        section
+            div.selector-img
+                img(src='public/img/Joan.png' alt='Joan')
+                h4 Joan of Arc
+            div.selector-text
+                p Mexican artist Frida Kahlo is an extremely important feminist figure. Though she was born in the early 1900’s, she was openly radical, spoke out about being disabled after a bus accident, and took both male and female lovers. Her many self-portraits comment on the female form and utilize traditional Mexican themes and colors.
+        section
+            div.selector-img
+                img(src='public/img/Maya.png' alt='Maya')
+                h4 Maya Angelou
+            div.selector-text
+                p Mexican artist Frida Kahlo is an extremely important feminist figure. Though she was born in the early 1900’s, she was openly radical, spoke out about being disabled after a bus accident, and took both male and female lovers. Her many self-portraits comment on the female form and utilize traditional Mexican themes and colors.
+        section
+            div.selector-img
+                img(src='public/img/Virginia.png' alt='Virginia')
+                h4 Virginia Woolfe
+            div.selector-text
+                p.
+                    Mexican artist Frida Kahlo is an extremely important 
+                    feminist figure. Though she was born in the early 1900’s, 
+                    she was openly radical, spoke out about being disabled after a bus accident, and took both male and female lovers. Her many self-portraits comment on the female form and utilize traditional Mexican themes and colors.
+    button.button(style='vertical-align:middle')
+        span START
+block endScript
