@@ -5,17 +5,15 @@ append startScript
     - var pageDescContent = "Here's a page description"
     - var pageContent = ".page-wrapper__content__home";
     - var namespace = 'home'
-    - var avatar = ['Frida with the good hair', 'joan', 'maya']
 
 
 block content
-    head
-
-        h1= avatar
-        div.container
-            img(src='public/img/FridaKahloImage.jpg' alt='logo')
-            p This is a trivia game about influential women of history.
-            button.button(style='vertical-align:middle')
-                span START
+    img(src='public/img/Logo.png' alt='logo')
+    div.avatar-banner
+        img(id='desktop' src='public/img/AvatarBanner.png' alt='Banner')
+        img(id='mobile' src='public/img/MobileBanner.png' alt='Banner')
+    p This is a trivia game about influential women of history.
+    button.button(style='vertical-align:middle')
+        span START
 
 block endScript
