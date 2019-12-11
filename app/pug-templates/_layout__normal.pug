@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        block startScript
+        title Herstory
+        meta(name="author", content="")
+        meta(name="keywords", content=keywordContent)
+        meta(name="description" content=pageDescContent)
+        link(rel="stylesheet", href="public/css/styles.css")
+    body
+        .wrapper
+            header.page-wrapper__template__header
+                //- include _includes/navbar
+            //- .page-wrapper__template__content(class=page)
+            .page-wrapper__template__content()
+                block content
+        script(src="public/js/script.js")
+        block endScript

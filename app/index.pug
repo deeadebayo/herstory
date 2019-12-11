@@ -1,0 +1,12 @@
+extends pug-templates/_layout__normal
+
+append startScript
+    - var keywordContent = "Some SEO stuff"
+    - var pageDescContent = "Here's a page description"
+    - var pageContent = ".page-wrapper__content__home";
+    - var namespace = 'home'
+    - var avatar = ['Frida with the good hair', 'joan', 'maya']
+
+block content
+    h1= avatar[0]
+block endScript
