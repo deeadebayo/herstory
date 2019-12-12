@@ -37,9 +37,22 @@ export function FirebaseInit() {
 		document.getElementById('c').innerHTML = data.val()[qCounter].choices[2];
 		document.getElementById('d').innerHTML = data.val()[qCounter].choices[3];
 
-		document.getElementById('next').onclick = function() {increaseCount()};
+		//document.getElementById('next').onclick = function() {increaseCount()};
 
 	}
+	document.getElementById('next').onclick = function() {
+		increaseCount();
+		ref.on('value', reloadquestion, errData);
+	}
+	function reloadquestion (data) {
+		document.getElementById('question').innerHTML = data.val()[qCounter].question;
+		document.getElementById('a').innerHTML = data.val()[qCounter].choices[0];
+		document.getElementById('b').innerHTML = data.val()[qCounter].choices[1];
+		document.getElementById('c').innerHTML = data.val()[qCounter].choices[2];
+		document.getElementById('d').innerHTML = data.val()[qCounter].choices[3];
+		console.warn(qCounter);
+	}
+	console.warn(document.getElementById('d'));
 
 	function increaseCount () {
 		++qCounter;
