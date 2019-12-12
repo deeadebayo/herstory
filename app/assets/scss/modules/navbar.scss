@@ -1,14 +1,16 @@
 .navbar {
 	display: grid;
-	grid-template-columns: 12.5em auto 12.5em;
+	grid-template-columns: 12.5em auto;
 
 	&__logo {
 		grid-column: 1/2;
-		padding: 2px 0;
+		padding: 4px 4px;
 		max-height: 80px;
 
-		img {
-			height: 100%;
+		img.logo {
+			display: block;
+			max-width: 100%;
+			max-height: 85px;
 		}
 	}
 
@@ -27,7 +29,7 @@
 				margin-right: 2.647em;
 
 				&:last-child {
-					margin-right: 0;
+					margin-right: 1em;
 				}
 
 				a.link {
@@ -35,29 +37,15 @@
 					position: relative;
 					text-decoration: none;
 					// text-transform: capitalize;
-					// color: $color--text-black;
+					color: white;
 
-					// &:hover,
-					// &.active,
-					// &:focus {
-					// 	color: $color--primary;
-					// }
+					&:hover,
+					&.active,
+					&:focus {
+						color: $color--feminist_grad;
+					}
 				}
 			}
-		}
-	}
-
-	&__avatar {
-		grid-column: 3/4;
-		display: block;
-		padding: 2px 0;
-		max-height: 80px;
-		float: right;
-
-		img {
-			border-radius: 50%;
-			border: white;
-			height: 100%;
 		}
 	}
 }
