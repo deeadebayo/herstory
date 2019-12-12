@@ -22,24 +22,25 @@ export function FirebaseInit() {
 	var database = firebase.database();
 	var ref = database.ref('questions');
 	var qCounter = 1;
-	ref.on('value', gotData, errData);
+	ref.on('value', createQuestionArr, errData);
 	
-	
-
-	function gotData(data) {
-		// console.warn(data.val());
-		// console.warn(typeof data.val());
-		// console.warn(data.val()[2].choices[0]);
-		document.getElementById('num').innerHTML = qCounter;
-		document.getElementById('question').innerHTML = data.val()[qCounter].question;
-		document.getElementById('a').innerHTML = data.val()[qCounter].choices[0];
-		document.getElementById('b').innerHTML = data.val()[qCounter].choices[1];
-		document.getElementById('c').innerHTML = data.val()[qCounter].choices[2];
-		document.getElementById('d').innerHTML = data.val()[qCounter].choices[3];
-
-		//document.getElementById('next').onclick = function() {increaseCount()};
-
+	function getRandomInt(min, max) {
+		return Math.floor(Math.random()*(max - min))+min;
 	}
+	
+	function createQuestionArr(data){
+		var questionInx;
+		var element;
+		console.warn(element, 'this is element');
+		const questionSet = new Set();
+		for (var i=0; i<12; i++){
+			questionInx=getRandomInt(1,31);
+			element=data.val()[questionInx];
+			questionSet.add(element); 
+		}
+		console.warn('set', questionSet);
+	}
+
 	document.getElementById('next').onclick = function() {
 		increaseCount();
 		ref.on('value', reloadquestion, errData);
