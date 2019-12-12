@@ -6,32 +6,10 @@
 
 // Our base
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:700&display=swap');
-@import 'modules/avatar';
+@import 'modules/wrapper';
 @import 'modules/navbar';
+@import 'modules/avatar';
 @import 'modules/index';
-
-.wrapper {
-	display: flex;
-	justify-content: center;
-	align-content: center;
-
-	height: 100%;
-	margin: 0;
-	// background-attachment: fixed;
-	// background-color: #a40e4c;
-	// background-image: linear-gradient(to bottom, #a40e4c, #4f1c82);
-}
-
-.page-wrapper__template__content {
-	padding: calc(5% + 50px);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 95%;
-	padding: 2%;
-	align-content: center;
-}
 
 // Third Party
 // ---maybe add some bootstrap if need

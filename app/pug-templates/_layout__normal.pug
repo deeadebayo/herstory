@@ -5,17 +5,18 @@ html(lang="en")
         meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         block startScript
-        title Herstory
-        meta(name="author", content="")
+        title Herstory!
+        meta(name="author", content="The Feminists")
         meta(name="keywords", content=keywordContent)
         meta(name="description" content=pageDescContent)
         link(rel="stylesheet", href="public/css/styles.css")
     body
-        header.page-wrapper__template__header
-            include _includes/navbar
         .wrapper
-            //- .page-wrapper__template__content(class=page)
-            .page-wrapper__template__content()
-                block content
+            header
+                include _includes/navbar
+            .wrapper__page
+                main(data-router-wrapper)
+                    .wrapper__page__content(data-router-view=namespace)
+                        block content
         script(src="public/js/script.js")
         block endScript
