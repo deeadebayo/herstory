@@ -1,22 +1,24 @@
 {
 	"name": "herstory",
 	"version": "1.0.0",
-	"description": "trivia about women in history",
+	"description": "a trivia game featuring influential women in history",
 	"main": "App.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/juanleguizamon/HERstory.git"
+		"url": "git+https://github.com/deeadebayo/herstory.git"
 	},
 	"author": "pelin, juan, lorita, dee",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/juanleguizamon/HERstory/issues"
+		"url": "https://github.com/deeadebayo/herstory/issues"
 	},
-	"homepage": "https://github.com/juanleguizamon/HERstory#readme",
+	"homepage": "https://github.com/deeadebayo/herstory#readme",
 	"dependencies": {
+		"@dogstudio/highway": "^2.1.3",
+		"animejs": "^3.1.0",
 		"npm": "^6.13.3"
 	},
 	"devDependencies": {
@@ -48,7 +50,6 @@
 		"gulp-uglify": "^3.0.2",
 		"imagemin-pngquant": "^8.0.0",
 		"lite-server": "^2.5.4",
-		"modularscale-sass": "^3.0.10",
 		"node-sass": "^4.13.0",
 		"postcss-loader": "^3.0.0",
 		"sass-loader": "^8.0.0",
