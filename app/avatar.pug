@@ -7,37 +7,38 @@ append startScript
 
 block content
     img(src='public/img/Logo.png' alt='logo')
+    p Select your avatar and press the 'START' button
     .avatar-selector
-        section
+        section(onclick="getAvatar('public/img/Frida.png')")
             div.selector-img
-                img(src='public/img/Frida.png' alt='Frida')
+                img.avt(src='public/img/Frida.png' alt='Frida')
                 h4 Frida Kahlo
             div.selector-text
                 p.
                     Artist Frida Kahlo was considered one of Mexico's greatest artists who began painting mostly self-portraits after she was severely injured in a bus accident.
                     Kahlo later became politically active and married fellow communist artist Diego Rivera in 1929. She exhibited her paintings in Paris and Mexico before her death
                     in 1954.After Kahlo’s death, the feminist movement of the 1970s led to renewed interest in her life and work, as Kahlo was viewed by many as an icon of female creativity.
-        section
+        section(onclick="getAvatar('public/img/Joan.png')")
             div.selector-img
-                img(src='public/img/Joan.png' alt='Joan')
+                img.avt(src='public/img/Joan.png' alt='Joan')
                 h4 Joan of Arc
             div.selector-text
                 p.
                     Joan of Arc, nicknamed "The Maid of Orléans," was born in 1412 in Domrémy, Bar, France. A national heroine of France, at age 18 she led the French army to victory over the
                     English at Orléans. Captured a year later, Joan was burned at the stake as a heretic by the English and their French collaborators. She was canonized as a Roman Catholic saint more
                     than 500 years later, on May 16, 1920.
-        section
+        section(onclick="getAvatar('public/img/Maya.png')")
             div.selector-img
-                img(src='public/img/Maya.png' alt='Maya')
+                img.avt(src='public/img/Maya.png' alt='Maya')
                 h4 Maya Angelou
             div.selector-text
                 p.
                     Maya Angelou was an American poet, singer, memoirist, and civil rights activist. She published seven autobiographies, three books of essays, several books of poetry, and is
                     credited with a list of plays, movies, and television shows spanning over 50 years.One of her famous quotes  is  "I am a feminist. I've been female for a long time now. I'd be
                     stupid not to be on my own side."
-        section
+        section(onclick="getAvatar('public/img/Virginia.png')")
             div.selector-img
-                img(src='public/img/Virginia.png' alt='Virginia')
+                img.avt(src='public/img/Virginia.png' alt='Virginia')
                 h4 Virginia Woolfe
             div.selector-text
                 p.
@@ -46,5 +47,17 @@ block content
                     A Room of One’s Own (1929) and Three Guineas (1938).she suffered from poor mental health for much of her life, committing suicide in 1941.
     a(href='quiz.html')
         button.button(style='vertical-align:middle')
-            span START
+            span START    
+    script.
+        function getAvatar(name){
+        console.log(name);
+        var box = document.getElementsByTagName('section');
+        console.log(box.length);
+        for (var i=0; i<box.length; i++){
+            box[i].style.opacity=0.5;
+            box[i].style.backgroundColor='#CACFD6';
+        }
+        document.getElementsByTagName('button')[0].scrollIntoView();
+        }
 block endScript
+

@@ -8,22 +8,23 @@ append startScript
 
 block content
     block content
-    .number
-        div
-            h2#num
-        div
-            img#mini(src='public/img/Maya.png' alt='avatar')
-    .question
-        h3#question 
-    .answers
-        button.choice(style='vertical-align:middle') 
-            p#a 
-        button.choice(style='vertical-align:middle')
-            p#b
-        button.choice(style='vertical-align:middle')
-            p#c
-        button.choice(style='vertical-align:middle')
-            p#d
-    button.button(style='vertical-align:middle')
-        span#next NEXT
+    .quiz
+        .number
+            div
+                h2#num
+            div
+                img#mini(src='public/img/Maya.png' alt='avatar')
+        .question
+            h3#question 
+        .answers
+            button.choice(style='vertical-align:middle') 
+                p#a 
+            button.choice(style='vertical-align:middle')
+                p#b
+            button.choice(style='vertical-align:middle')
+                p#c
+            button.choice(style='vertical-align:middle')
+                p#d
+        button.button(style='vertical-align:middle')
+            span#next NEXT
 block endScript
