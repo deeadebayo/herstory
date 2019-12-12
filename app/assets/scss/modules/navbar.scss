@@ -1,6 +1,6 @@
 .navbar {
 	display: grid;
-	grid-template-columns: 12.5em auto;
+	grid-template-columns: 12.5em auto 12.5em;
 
 	&__logo {
 		grid-column: 1/2;
@@ -44,6 +44,20 @@
 					// }
 				}
 			}
+		}
+	}
+
+	&__avatar {
+		grid-column: 3/4;
+		display: block;
+		padding: 2px 0;
+		max-height: 80px;
+		float: right;
+
+		img {
+			border-radius: 50%;
+			border: white;
+			height: 100%;
 		}
 	}
 }

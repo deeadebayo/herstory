@@ -17,6 +17,7 @@
 	},
 	"homepage": "https://github.com/juanleguizamon/HERstory#readme",
 	"dependencies": {
+		"@dogstudio/highway": "^2.1.3",
 		"npm": "^6.13.3"
 	},
 	"devDependencies": {
