@@ -7,6 +7,18 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:700&display=swap');
 
+//global variables
+$color--primary: #a40e4c;
+$color--feminist_purp: #45062e;
+$color--feminist_grad: #4f1c82;
+
+// Misc styles
+body {
+	margin: 0;
+	font-family: 'Comfortaa', cursive;
+	color: #cacfd6;
+}
+
 //custom style modules
 @import 'modules/wrapper';
 @import 'modules/navbar';
