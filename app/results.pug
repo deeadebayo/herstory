@@ -1,5 +1,9 @@
 extends pug-templates/_layout__normal
 
 append startScript
-    //- let's dump variables into here like below
-    - var keywordContent = "Some SEO stuff" // The template page has a variable called keywordContent where this string writes into
+    - var keywordContent = "Some SEO stuff"
+    - var pageDescContent = "Here's a page description"
+    - var namespace = 'results'
+
+block content
+    p text

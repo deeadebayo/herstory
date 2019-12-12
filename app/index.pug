@@ -3,17 +3,16 @@ extends pug-templates/_layout__normal
 append startScript
     - var keywordContent = "Some SEO stuff"
     - var pageDescContent = "Here's a page description"
-    - var pageContent = ".page-wrapper__content__home";
     - var namespace = 'home'
-
 
 block content
     img(src='public/img/Logo.png' alt='logo')
-    div.avatar-banner
+    .avatar-banner
         img(id='desktop' src='public/img/AvatarBanner.png' alt='Banner')
         img(id='mobile' src='public/img/MobileBanner.png' alt='Banner')
     p This is a trivia game about influential women of history.
-    button.button(style='vertical-align:middle')
-        span START
+    a(href='avatar.html')
+        button.button(style='vertical-align:middle')
+            span START
 
 block endScript

@@ -1,0 +1,27 @@
+.wrapper {
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-color: hsl(335, 84%, 35%);
+	background-image: linear-gradient(to bottom, #a40e4c, #4f1c82);
+
+	&__page {
+		display: flex;
+		height: 100%;
+		margin: 0;
+		padding: calc(5% + 50px);
+
+		&__content {
+			display: flex;
+			width: 95%;
+			padding: 2%;
+
+			&--center {
+				display: flex;
+				justify-content: center;
+				align-content: center;
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+	}
+}
