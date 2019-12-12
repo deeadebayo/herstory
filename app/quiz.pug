@@ -1,22 +1,21 @@
 extends pug-templates/_layout__normal
 
 append startScript
-    //- let's dump variables into here like below
-    - var keywordContent = "Some SEO stuff" // The template page has a variable called keywordContent where this string writes into
+    - var keywordContent = "Some SEO stuff"
+    - var pageDescContent = "Here's a page description"
+    - var namespace = 'quiz'
     - var avatar = ['Frida with the good hair', 'joan', 'maya']
-
 
 block content
     block content
-    img(src='public/img/Logo.png' alt='logo')
-    div.number
+    .number
         div
             h2 #1
         div
             img#mini(src='public/img/Maya.png' alt='avatar')
-    div.question
+    .question
         h3 Is this a question?
-    div.answers
+    .answers
         button.choice#a(style='vertical-align:middle')
             span A
         button.choice#b(style='vertical-align:middle')
