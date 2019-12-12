@@ -38,7 +38,8 @@ export function FirebaseInit() {
 			element=data.val()[questionInx];
 			questionSet.add(element); 
 		}
-		console.warn('set', questionSet);
+		var questionArr=Array.from(questionSet); 
+		console.warn('final array', questionArr);
 	}
 
 	document.getElementById('next').onclick = function() {
