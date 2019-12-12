@@ -21,13 +21,35 @@ export function FirebaseInit() {
 
 	var database = firebase.database();
 	var ref = database.ref('questions');
+	var qCounter = 1;
 	ref.on('value', gotData, errData);
+	
+	
+
 	function gotData(data) {
-		console.warn(data.val());
-		console.warn(typeof data.val());
+		// console.warn(data.val());
+		// console.warn(typeof data.val());
+		// console.warn(data.val()[2].choices[0]);
+		document.getElementById('num').innerHTML = qCounter;
+		document.getElementById('question').innerHTML = data.val()[qCounter].question;
+		document.getElementById('a').innerHTML = data.val()[qCounter].choices[0];
+		document.getElementById('b').innerHTML = data.val()[qCounter].choices[1];
+		document.getElementById('c').innerHTML = data.val()[qCounter].choices[2];
+		document.getElementById('d').innerHTML = data.val()[qCounter].choices[3];
+
+		document.getElementById('next').onclick = function() {increaseCount()};
+
 	}
+
+	function increaseCount () {
+		++qCounter;
+		console.warn(qCounter);
+	}
+
 	function errData(err) {
 		console.warn('Error!');
 		console.warn(err);
 	}
+
+	
 }

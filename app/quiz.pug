@@ -10,20 +10,20 @@ block content
     block content
     .number
         div
-            h2 #1
+            h2#num
         div
             img#mini(src='public/img/Maya.png' alt='avatar')
     .question
-        h3 Is this a question?
+        h3#question 
     .answers
-        button.choice#a(style='vertical-align:middle')
-            span A
-        button.choice#b(style='vertical-align:middle')
-            span B
-        button.choice#c(style='vertical-align:middle')
-            span C
-        button.choice#d(style='vertical-align:middle')
-            span D
+        button.choice(style='vertical-align:middle') 
+            p#a 
+        button.choice(style='vertical-align:middle')
+            p#b
+        button.choice(style='vertical-align:middle')
+            p#c
+        button.choice(style='vertical-align:middle')
+            p#d
     button.button(style='vertical-align:middle')
-        span NEXT
+        span#next NEXT
 block endScript
