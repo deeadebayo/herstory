@@ -22,7 +22,7 @@ _netlifyTask_ - if we have extra (config) files we want to feed to our site (stu
 
 _imgTask_ - Minifies all our images using aggressive compression methods for faster loading
 
-### Import commands to locally build/serve project
+### Important commands to locally build/serve project
 _build_ - runs all the tasks above in that order. Exits after completion
 
 _serve_ - starts up a quick server (BrowserSync) and file watcher, you can visit on your local (localhost) or same network (IP address from same wifi)
