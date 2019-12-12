@@ -1,21 +1,37 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
 // Our base
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:700&display=swap');
 @import 'modules/avatar';
+@import 'modules/navbar';
 @import 'modules/index';
 
 .wrapper {
-    padding: 2%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+ navbar
+	display: flex;
+	justify-content: center;
+	align-content: center;
+
+	height: 100%;
+	margin: 0;
+	// background-attachment: fixed;
+	// background-color: #a40e4c;
+	// background-image: linear-gradient(to bottom, #a40e4c, #4f1c82);
 }
 
 .page-wrapper__template__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 95%;
+	padding: calc(5% + 50px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 95%;
+    padding: 2%;
+    align-content: center;
 }
 
 

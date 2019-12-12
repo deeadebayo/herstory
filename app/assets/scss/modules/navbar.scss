@@ -1,0 +1,49 @@
+.navbar {
+	display: grid;
+	grid-template-columns: 12.5em auto;
+
+	&__logo {
+		grid-column: 1/2;
+		padding: 2px 0;
+		max-height: 80px;
+
+		img {
+			height: 100%;
+		}
+	}
+
+	&__links {
+		grid-column: 2/3;
+		display: block;
+
+		ul {
+			list-style: none;
+			justify-content: end;
+			float: right;
+
+			li {
+				display: block;
+				float: left;
+				margin-right: 2.647em;
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				a.link {
+					display: block;
+					position: relative;
+					text-decoration: none;
+					// text-transform: capitalize;
+					// color: $color--text-black;
+
+					// &:hover,
+					// &.active,
+					// &:focus {
+					// 	color: $color--primary;
+					// }
+				}
+			}
+		}
+	}
+}
