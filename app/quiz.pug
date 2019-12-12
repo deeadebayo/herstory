@@ -7,5 +7,24 @@ append startScript
 
 
 block content
-    h1= avatar[2]
+    block content
+    img(src='public/img/Logo.png' alt='logo')
+    div.number
+        div
+            h2 #1
+        div
+            img#mini(src='public/img/Maya.png' alt='avatar')
+    div.question
+        h3 Is this a question?
+    div.answers
+        button.choice#a(style='vertical-align:middle')
+            span A
+        button.choice#b(style='vertical-align:middle')
+            span B
+        button.choice#c(style='vertical-align:middle')
+            span C
+        button.choice#d(style='vertical-align:middle')
+            span D
+    button.button(style='vertical-align:middle')
+        span NEXT
 block endScript
