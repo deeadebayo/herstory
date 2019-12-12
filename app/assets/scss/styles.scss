@@ -4,12 +4,13 @@
 	box-sizing: border-box;
 }
 
-// Our base
+// Fonts
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:700&display=swap');
+
+//custom style modules
 @import 'modules/wrapper';
 @import 'modules/navbar';
-@import 'modules/avatar';
 @import 'modules/index';
+@import 'modules/avatar';
 
 // Third Party
-// ---maybe add some bootstrap if need
