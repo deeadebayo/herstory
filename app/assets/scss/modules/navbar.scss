@@ -1,51 +1,33 @@
 .navbar {
-	display: grid;
-	grid-template-columns: 12.5em auto;
+	display: flex;
+	justify-content: space-around;
+	padding: 2%;
+}
 
-	&__logo {
-		grid-column: 1/2;
-		padding: 4px 4px;
-		max-height: 80px;
+.navbar div {
+	width: 45%;
+}
 
-		img.logo {
-			display: block;
-			max-width: 100%;
-			max-height: 85px;
-		}
-	}
+.navbar__logo {
+	display: flex;
+	justify-content: flex-start;
+}
 
-	&__links {
-		grid-column: 2/3;
-		display: block;
+.navbar__links {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.navbar__links a {
+	text-decoration: none;
+	list-style: none;
+	color: #FFFFFF;
+}
 
-		ul {
-			list-style: none;
-			justify-content: end;
-			float: right;
+.navbar__links a:hover {
+	color: #411C82;
+}
 
-			li {
-				display: block;
-				float: left;
-				margin-right: 2.647em;
-
-				&:last-child {
-					margin-right: 1em;
-				}
-
-				a.link {
-					display: block;
-					position: relative;
-					text-decoration: none;
-					// text-transform: capitalize;
-					color: white;
-
-					&:hover,
-					&.active,
-					&:focus {
-						color: $color--feminist_grad;
-					}
-				}
-			}
-		}
-	}
+.logo {
+	max-width: 100px;
 }
