@@ -1,44 +1,49 @@
 extends pug-templates/_layout__normal
 
 append startScript
-    //- let's dump variables into here like below
-    - var keywordContent = "Some SEO stuff" // The template page has a variable called keywordContent where this string writes into
+    - var keywordContent = "Some SEO stuff"
+    - var pageDescContent = "Here's a page description"
+    - var namespace = 'avatar'
 
 block content
     img(src='public/img/Logo.png' alt='logo')
-    div.avatar-selector
+    .avatar-selector
         section
-            div.selector-img
+            .selector-img
                 img(src='public/img/Frida.png' alt='Frida')
                 h4 Frida Kahlo
-            div.selector-text
+            .selector-text
                 p.
-                    Mexican artist Frida Kahlo is an extremely important feminist figure.
-                    Though she was born in the early 1900’s, she was openly radical,
-                    spoke out about being disabled after a bus accident, and took both male 
-                    and female lovers. Her many self-portraits comment on the female form and
-                    utilize traditional Mexican themes and colors.
+                    Artist Frida Kahlo was considered one of Mexico's greatest artists who began painting mostly self-portraits after she was severely injured in a bus accident.
+                    Kahlo later became politically active and married fellow communist artist Diego Rivera in 1929. She exhibited her paintings in Paris and Mexico before her death
+                    in 1954.After Kahlo’s death, the feminist movement of the 1970s led to renewed interest in her life and work, as Kahlo was viewed by many as an icon of female creativity.
         section
-            div.selector-img
+            .selector-img
                 img(src='public/img/Joan.png' alt='Joan')
                 h4 Joan of Arc
             div.selector-text
-                p Mexican artist Frida Kahlo is an extremely important feminist figure. Though she was born in the early 1900’s, she was openly radical, spoke out about being disabled after a bus accident, and took both male and female lovers. Her many self-portraits comment on the female form and utilize traditional Mexican themes and colors.
+                p.
+                    Joan of Arc, nicknamed "The Maid of Orléans," was born in 1412 in Domrémy, Bar, France. A national heroine of France, at age 18 she led the French army to victory over the
+                    English at Orléans. Captured a year later, Joan was burned at the stake as a heretic by the English and their French collaborators. She was canonized as a Roman Catholic saint more
+                    than 500 years later, on May 16, 1920.
         section
-            div.selector-img
+            .selector-img
                 img(src='public/img/Maya.png' alt='Maya')
                 h4 Maya Angelou
             div.selector-text
-                p Mexican artist Frida Kahlo is an extremely important feminist figure. Though she was born in the early 1900’s, she was openly radical, spoke out about being disabled after a bus accident, and took both male and female lovers. Her many self-portraits comment on the female form and utilize traditional Mexican themes and colors.
+                p.
+                    Maya Angelou was an American poet, singer, memoirist, and civil rights activist. She published seven autobiographies, three books of essays, several books of poetry, and is
+                    credited with a list of plays, movies, and television shows spanning over 50 years.One of her famous quotes  is  "I am a feminist. I've been female for a long time now. I'd be
+                    stupid not to be on my own side."
         section
-            div.selector-img
+            .selector-img
                 img(src='public/img/Virginia.png' alt='Virginia')
                 h4 Virginia Woolfe
-            div.selector-text
+            .selector-text
                 p.
-                    Mexican artist Frida Kahlo is an extremely important 
-                    feminist figure. Though she was born in the early 1900’s, 
-                    she was openly radical, spoke out about being disabled after a bus accident, and took both male and female lovers. Her many self-portraits comment on the female form and utilize traditional Mexican themes and colors.
+                    Virginia Woolf (1882-1941) was one of the most important female authors in the transitional period from the Victorian age to the Edwardian age. She refused patriarchal honours
+                    like the Companion of Honour (1935) and honorary degrees from Manchester and Liverpool (1933 and 1939), and wrote polemical works about the position of women in society, such as
+                    A Room of One’s Own (1929) and Three Guineas (1938).she suffered from poor mental health for much of her life, committing suicide in 1941.
     button.button(style='vertical-align:middle')
         span START
 block endScript
