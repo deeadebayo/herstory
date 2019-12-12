@@ -23,6 +23,8 @@ export function FirebaseInit() {
 	var ref = database.ref('questions');
 	var qCounter = 1;
 	ref.on('value', gotData, errData);
+	var user_answer = [];
+
 	
 	
 
@@ -40,23 +42,56 @@ export function FirebaseInit() {
 		//document.getElementById('next').onclick = function() {increaseCount()};
 
 	}
-	document.getElementById('next').onclick = function() {
-		increaseCount();
-		ref.on('value', reloadquestion, errData);
+
+	document.getElementById('next').addEventListener('click', function(e) {
+		if (qCounter < 11) {
+			e.preventDefault();
+			ref.on('value', reloadquestion, errData);
+		} else if (qCounter == 11) {
+			e.preventDefault();
+			ref.on('value', reloadquestion, errData);
+			document.getElementById('next').innerHTML = 'FINISH';
+		} else if (qCounter == 12) {
+			document.getElementById('finish').setAttribute('href', 'results.html');
+		}
+
+	})
+
+	document.getElementById('a').onclick = function () {
+		user_answer[qCounter - 1] = document.getElementById('a').innerHTML;
+		console.warn(user_answer);
+	}
+	document.getElementById('b').onclick = function () {
+		user_answer[qCounter - 1] = document.getElementById('b').innerHTML;
+		console.warn(user_answer);
+	}
+	document.getElementById('c').onclick = function () {
+		user_answer[qCounter - 1] = document.getElementById('c').innerHTML;
+		console.warn(user_answer);
+	}
+	document.getElementById('d').onclick = function () {
+		user_answer[qCounter - 1] = document.getElementById('d').innerHTML;
+		console.warn(user_answer);
 	}
 	function reloadquestion (data) {
-		document.getElementById('question').innerHTML = data.val()[qCounter].question;
-		document.getElementById('a').innerHTML = data.val()[qCounter].choices[0];
-		document.getElementById('b').innerHTML = data.val()[qCounter].choices[1];
-		document.getElementById('c').innerHTML = data.val()[qCounter].choices[2];
-		document.getElementById('d').innerHTML = data.val()[qCounter].choices[3];
-		console.warn(qCounter);
+		if (typeof(user_answer[qCounter -1]) == 'undefined') {
+			alert('Choose an answer')
+		} else {
+			increaseCount();
+			document.getElementById('num').innerHTML = qCounter;
+			document.getElementById('question').innerHTML = data.val()[qCounter].question;
+			document.getElementById('a').innerHTML = data.val()[qCounter].choices[0];
+			document.getElementById('b').innerHTML = data.val()[qCounter].choices[1];
+			document.getElementById('c').innerHTML = data.val()[qCounter].choices[2];
+			document.getElementById('d').innerHTML = data.val()[qCounter].choices[3];
+			console.warn(qCounter);
+			
+		}
 	}
 	console.warn(document.getElementById('d'));
 
 	function increaseCount () {
 		++qCounter;
-		console.warn(qCounter);
 	}
 
 	function errData(err) {
