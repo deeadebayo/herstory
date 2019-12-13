@@ -23,11 +23,9 @@ export function FirebaseInit() {
 	var ref = database.ref('questions');
 	var qCounter = 1;
 	var user_answer = [];
-	var rand_indexes = [1];
-	var questions = ['Who is the first female pilot?'];
-	var right_answers = ['Sabiha Gokcen'];
+	var rand_indexes = [];
 	var rand;
-	var i = 1;
+	var i = 0
 	while (i < 12) {
 		rand = Math.ceil(Math.random() * 31);
 		console.warn(rand);
@@ -40,13 +38,15 @@ export function FirebaseInit() {
 	document.getElementById('buttonnext').addEventListener('click', function(e) {
 		if (qCounter < 11) {
 			e.preventDefault();
+			document.getElementById('buttonfinish').style.visibility='hidden';
+			document.getElementById('buttonfinish').style.display='none';
 			ref.on('value', reloadquestion, errData);
 		} else if (qCounter == 11) {
 			e.preventDefault();
 			ref.on('value', reloadquestion, errData);
 			document.getElementById('next').innerHTML = 'FINISH';
 		} else if (qCounter == 12) {
-			document.getElementById('finish').setAttribute('href', 'results.html');
+			document.getElementById('buttonfinish').style.visibility='visible';
 		}
 
 	});
@@ -74,15 +74,11 @@ export function FirebaseInit() {
 			increaseCount();
 			document.getElementById('num').innerHTML = qCounter;
 			document.getElementById('question').innerHTML = data.val()[rand_indexes[qCounter - 1]].question;
-			questions[qCounter - 1] = data.val()[rand_indexes[qCounter - 1]].question;
-			right_answers[qCounter - 1] = data.val()[rand_indexes[qCounter - 1]].answer;
 			document.getElementById('a').innerHTML = data.val()[rand_indexes[qCounter-1]].choices[0];
 			document.getElementById('b').innerHTML = data.val()[rand_indexes[qCounter - 1]].choices[1];
 			document.getElementById('c').innerHTML = data.val()[rand_indexes[qCounter - 1]].choices[2];
 			document.getElementById('d').innerHTML = data.val()[rand_indexes[qCounter - 1]].choices[3];
 			console.warn(qCounter);
-			console.warn(questions);
-			console.warn(right_answers);
 			
 		}
 	}
