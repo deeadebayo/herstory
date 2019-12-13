@@ -68,7 +68,7 @@ export function FirebaseInit() {
 	}
 	function reloadquestion (data) {
 		if (typeof(user_answer[qCounter -1]) == 'undefined') {
-			alert('Choose an answer')
+			alert('Choose an answer');
 		} else {
 			increaseCount();
 			document.getElementById('num').innerHTML = qCounter;
