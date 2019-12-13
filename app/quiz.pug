@@ -17,6 +17,15 @@ block content
         .question
             h3#question 
         .answers
+<<<<<<< HEAD
+            button.choice(style='vertical-align:middle' onclick="getAnswer('a')") 
+                p#a 
+            button.choice(style='vertical-align:middle' onclick="getAnswer('b')")
+                p#b
+            button.choice(style='vertical-align:middle' onclick="getAnswer('c')")
+                p#c
+            button.choice(style='vertical-align:middle' onclick="getAnswer('d')")
+=======
             button.choice#buttona(style='vertical-align:middle') 
                 p#a 
             button.choice#buttonb(style='vertical-align:middle')
@@ -24,7 +33,19 @@ block content
             button.choice#buttonc(style='vertical-align:middle')
                 p#c
             button.choice#buttond(style='vertical-align:middle')
+>>>>>>> d0faed5356a8295460a8801790a167d49cee6ce2
                 p#d
         button.button#buttonnext(style='vertical-align:middle')
             span#next NEXT
+    script.
+        function getAnswer(answer){
+        console.log(answer);
+        var box = document.getElementsByTagName('button');
+        console.log(box.length);
+        for (var i=0; i<box.length-1; i++){
+            box[i].style.opacity=0.5;
+            box[i].style.backgroundColor='#A40E4C';
+            box[i].style.borderColor='#A40E4C';
+        }
+        }
 block endScript
