@@ -30,6 +30,11 @@
 	align-items: center;
 }
 
+.avatar-selector > section:active {
+	background-color: #cacfd6;
+	border: red;
+}
+
 .selector-img img {
 	width: 60%;
 	border-radius: 50%;
@@ -45,12 +50,12 @@
 	font-size: 1.2em;
 }
 
-@media(min-width: 750px) {
-    .avatar-selector section {
-	    flex-direction: row;
-    }
+@media (min-width: 750px) {
+	.avatar-selector section {
+		flex-direction: row;
+	}
 
-    .avatar-selector section div {
-	    width: 50%;
-    }
+	.avatar-selector section div {
+		width: 50%;
+	}
 }
