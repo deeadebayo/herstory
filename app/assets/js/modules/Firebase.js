@@ -54,12 +54,16 @@ export function FirebaseInit() {
 	document;
 	buttonFinish.addEventListener('click', function() {
 		var count = 0;
-		for (var x = 0; x < 12; x++) {
-			if (right_answers[x] === user_answer[x]) {
-				count++;
+		if (user_answer.length == 12) {
+			for (var x = 0; x < 12; x++) {
+				if (right_answers[x] === user_answer[x]) {
+					count++;
+				}
 			}
+			alert('You got ' + count + ' of out of 12 questions right!');
+		} else {
+			alert('Answer the last question!');
 		}
-		alert('You got ' + count + ' of out of 12 questions right!');
 	});
 	buttonNext.addEventListener('click', function(e) {
 		if (qCounter < 11) {
