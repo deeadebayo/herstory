@@ -96,6 +96,10 @@ export function FirebaseInit() {
 			document.getElementById('b').innerHTML = data.val()[rand_indexes[qCounter - 1]].choices[1];
 			document.getElementById('c').innerHTML = data.val()[rand_indexes[qCounter - 1]].choices[2];
 			document.getElementById('d').innerHTML = data.val()[rand_indexes[qCounter - 1]].choices[3];
+			document.getElementById('buttona').setAttribute('style', 'background-color: #FFFFFF');
+			document.getElementById('buttonb').setAttribute('style', 'background-color: #FFFFFF');
+			document.getElementById('buttonc').setAttribute('style', 'background-color: #FFFFFF');
+			document.getElementById('buttond').setAttribute('style', 'background-color: #FFFFFF');
 			console.warn(qCounter);
 			console.warn(questions);
 			console.warn(right_answers);
