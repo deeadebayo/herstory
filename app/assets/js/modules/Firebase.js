@@ -32,7 +32,7 @@ export function FirebaseInit() {
 		// console.warn(data.val());
 		// console.warn(typeof data.val());
 		// console.warn(data.val()[2].choices[0]);
-		document.getElementById('num').innerHTML = qCounter;
+		document.getElementById('num').innerHTML = '#'+qCounter;
 		document.getElementById('question').innerHTML = data.val()[qCounter].question;
 		document.getElementById('a').innerHTML = data.val()[qCounter].choices[0];
 		document.getElementById('b').innerHTML = data.val()[qCounter].choices[1];
