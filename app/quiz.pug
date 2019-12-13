@@ -22,17 +22,19 @@ block content
                 p#c Sabiha Gokcen
             button.choice#buttond(style='vertical-align:middle')
                 p#d Eleanor Roosevelt
+        button.button#buttonfinish(style='vertical-align:middle')
+            span#finish FINISH
         button.button#buttonnext(style='vertical-align:middle')
             span#next NEXT
-    script.
-        function getAnswer(answer){
-        console.log(answer);
-        var box = document.getElementsByTagName('button');
-        console.log(box.length);
-        for (var i=0; i<box.length-1; i++){
-            box[i].style.opacity=0.5;
-            box[i].style.backgroundColor='#A40E4C';
-            box[i].style.borderColor='#A40E4C';
-        }
-        }
+    //- script.
+    //-     function getAnswer(answer){
+    //-         console.log(answer);
+    //-         var box = document.getElementsByTagName('button');
+    //-         console.log(box.length);
+    //-         for (var i=0; i<box.length-1; i++){
+    //-             box[i].style.opacity=0.5;
+    //-             box[i].style.backgroundColor='#A40E4C';
+    //-             box[i].style.borderColor='#A40E4C';
+    //-         }
+    //-     }
 block endScript
