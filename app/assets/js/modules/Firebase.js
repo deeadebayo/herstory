@@ -53,18 +53,34 @@ export function FirebaseInit() {
 
 	document.getElementById('buttona').onclick = function () {
 		user_answer[qCounter - 1] = document.getElementById('a').innerHTML;
+		document.getElementById('buttona').setAttribute('style', 'background-color: #A40E4C');
+		document.getElementById('buttonb').setAttribute('style', 'background-color: #FFFFFF');
+		document.getElementById('buttonc').setAttribute('style', 'background-color: #FFFFFF');
+		document.getElementById('buttond').setAttribute('style', 'background-color: #FFFFFF');
 		console.warn(user_answer);
 	}
 	document.getElementById('buttonb').onclick = function () {
 		user_answer[qCounter - 1] = document.getElementById('b').innerHTML;
+		document.getElementById('buttona').setAttribute('style', 'background-color: #FFFFFF');
+		document.getElementById('buttonb').setAttribute('style', 'background-color: #A40E4C');
+		document.getElementById('buttonc').setAttribute('style', 'background-color: #FFFFFF');
+		document.getElementById('buttond').setAttribute('style', 'background-color: #FFFFFF');
 		console.warn(user_answer);
 	}
 	document.getElementById('buttonc').onclick = function () {
 		user_answer[qCounter - 1] = document.getElementById('c').innerHTML;
+		document.getElementById('buttona').setAttribute('style', 'background-color: #FFFFFF');
+		document.getElementById('buttonb').setAttribute('style', 'background-color: #FFFFFF');
+		document.getElementById('buttonc').setAttribute('style', 'background-color: #A40E4C');
+		document.getElementById('buttond').setAttribute('style', 'background-color: #FFFFFF');
 		console.warn(user_answer);
 	}
 	document.getElementById('buttond').onclick = function () {
 		user_answer[qCounter - 1] = document.getElementById('d').innerHTML;
+		document.getElementById('buttona').setAttribute('style', 'background-color: #FFFFFF');
+		document.getElementById('buttonb').setAttribute('style', 'background-color: #FFFFFF');
+		document.getElementById('buttonc').setAttribute('style', 'background-color: #FFFFFF');
+		document.getElementById('buttond').setAttribute('style', 'background-color: #A40E4C');
 		console.warn(user_answer);
 	}
 	function reloadquestion (data) {
