@@ -7,10 +7,4 @@ const pageAnimation = new Highway.Core({
 	}
 });
 
-if (Highway) {
-	console.warn(`it's working bb`);
-} else {
-	console.warn(`Highway is not enabled`);
-}
-
 export default pageAnimation;
