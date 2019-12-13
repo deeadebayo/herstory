@@ -23,30 +23,21 @@ export function FirebaseInit() {
 	var ref = database.ref('questions');
 	var qCounter = 1;
 	var user_answer = [];
-<<<<<<< HEAD
-
-	
-	
-
-	function gotData(data) {
-		// console.warn(data.val());
-		// console.warn(typeof data.val());
-		// console.warn(data.val()[2].choices[0]);
-		document.getElementById('num').innerHTML = '#'+qCounter;
-		document.getElementById('question').innerHTML = data.val()[qCounter].question;
-		document.getElementById('a').innerHTML = data.val()[qCounter].choices[0];
-		document.getElementById('b').innerHTML = data.val()[qCounter].choices[1];
-		document.getElementById('c').innerHTML = data.val()[qCounter].choices[2];
-		document.getElementById('d').innerHTML = data.val()[qCounter].choices[3];
-
-		//document.getElementById('next').onclick = function() {increaseCount()};
-
+	var rand_indexes = [1];
+	var questions = ['Who is the first female pilot?'];
+	var right_answers = ['Sabiha Gokcen'];
+	var rand;
+	var i = 1;
+	while (i < 12) {
+		rand = Math.ceil(Math.random() * 31);
+		console.warn(rand);
+		if (rand_indexes.indexOf(rand) == -1) {
+			rand_indexes[i] = rand;
+			i++;
+		}
 	}
-
-	document.getElementById('next').addEventListener('click', function(e) {
-=======
+	console.warn(rand_indexes);
 	document.getElementById('buttonnext').addEventListener('click', function(e) {
->>>>>>> d0faed5356a8295460a8801790a167d49cee6ce2
 		if (qCounter < 11) {
 			e.preventDefault();
 			ref.on('value', reloadquestion, errData);
@@ -58,7 +49,7 @@ export function FirebaseInit() {
 			document.getElementById('finish').setAttribute('href', 'results.html');
 		}
 
-	})
+	});
 
 	document.getElementById('buttona').onclick = function () {
 		user_answer[qCounter - 1] = document.getElementById('a').innerHTML;
@@ -78,16 +69,20 @@ export function FirebaseInit() {
 	}
 	function reloadquestion (data) {
 		if (typeof(user_answer[qCounter -1]) == 'undefined') {
-			alert('Choose an answer')
+			alert('Choose an answer');
 		} else {
 			increaseCount();
 			document.getElementById('num').innerHTML = qCounter;
-			document.getElementById('question').innerHTML = data.val()[qCounter].question;
-			document.getElementById('a').innerHTML = data.val()[qCounter].choices[0];
-			document.getElementById('b').innerHTML = data.val()[qCounter].choices[1];
-			document.getElementById('c').innerHTML = data.val()[qCounter].choices[2];
-			document.getElementById('d').innerHTML = data.val()[qCounter].choices[3];
+			document.getElementById('question').innerHTML = data.val()[rand_indexes[qCounter - 1]].question;
+			questions[qCounter - 1] = data.val()[rand_indexes[qCounter - 1]].question;
+			right_answers[qCounter - 1] = data.val()[rand_indexes[qCounter - 1]].answer;
+			document.getElementById('a').innerHTML = data.val()[rand_indexes[qCounter-1]].choices[0];
+			document.getElementById('b').innerHTML = data.val()[rand_indexes[qCounter - 1]].choices[1];
+			document.getElementById('c').innerHTML = data.val()[rand_indexes[qCounter - 1]].choices[2];
+			document.getElementById('d').innerHTML = data.val()[rand_indexes[qCounter - 1]].choices[3];
 			console.warn(qCounter);
+			console.warn(questions);
+			console.warn(right_answers);
 			
 		}
 	}

@@ -45,9 +45,9 @@ block content
                     Virginia Woolf (1882-1941) was one of the most important female authors in the transitional period from the Victorian age to the Edwardian age. She refused patriarchal honours
                     like the Companion of Honour (1935) and honorary degrees from Manchester and Liverpool (1933 and 1939), and wrote polemical works about the position of women in society, such as
                     A Room of One’s Own (1929) and Three Guineas (1938).she suffered from poor mental health for much of her life, committing suicide in 1941.
-    a(href='quiz.html')
-        button.button(style='vertical-align:middle')
-            span START    
+    a#buttonstart(href='quiz.html' data-router-disabled)
+        button.button#buttonstart(style='vertical-align:middle')
+            span START  
     script.
         function getAvatar(name){
         console.log(name);
@@ -60,4 +60,4 @@ block content
         document.getElementsByTagName('button')[0].scrollIntoView();
         }
 block endScript
-
+    
