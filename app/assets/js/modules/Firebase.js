@@ -22,8 +22,8 @@ export function FirebaseInit() {
 	var database = firebase.database();
 	var ref = database.ref('questions');
 	var qCounter = 1;
-	ref.on('value', gotData, errData);
 	var user_answer = [];
+<<<<<<< HEAD
 
 	
 	
@@ -44,6 +44,9 @@ export function FirebaseInit() {
 	}
 
 	document.getElementById('next').addEventListener('click', function(e) {
+=======
+	document.getElementById('buttonnext').addEventListener('click', function(e) {
+>>>>>>> d0faed5356a8295460a8801790a167d49cee6ce2
 		if (qCounter < 11) {
 			e.preventDefault();
 			ref.on('value', reloadquestion, errData);
@@ -57,19 +60,19 @@ export function FirebaseInit() {
 
 	})
 
-	document.getElementById('a').onclick = function () {
+	document.getElementById('buttona').onclick = function () {
 		user_answer[qCounter - 1] = document.getElementById('a').innerHTML;
 		console.warn(user_answer);
 	}
-	document.getElementById('b').onclick = function () {
+	document.getElementById('buttonb').onclick = function () {
 		user_answer[qCounter - 1] = document.getElementById('b').innerHTML;
 		console.warn(user_answer);
 	}
-	document.getElementById('c').onclick = function () {
+	document.getElementById('buttonc').onclick = function () {
 		user_answer[qCounter - 1] = document.getElementById('c').innerHTML;
 		console.warn(user_answer);
 	}
-	document.getElementById('d').onclick = function () {
+	document.getElementById('buttond').onclick = function () {
 		user_answer[qCounter - 1] = document.getElementById('d').innerHTML;
 		console.warn(user_answer);
 	}
