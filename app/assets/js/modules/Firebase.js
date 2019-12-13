@@ -1,9 +1,5 @@
-// Firebase App (the core Firebase SDK) is always required and
-// must be listed before other Firebase SDKs
 var firebase = require('firebase/app');
-// Add the Firebase products that you want to use
 require('firebase/database');
-//var ReactDOM = require('react-dom');
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyD92Ce4HzvYMeqJFvFSdEe3yHNPMYXrs9k',
@@ -19,17 +15,32 @@ const firebaseConfig = {
 export function FirebaseInit() {
 	firebase.initializeApp(firebaseConfig);
 
-	var database = firebase.database();
-	var ref = database.ref('questions');
-	var qCounter = 1;
-	var user_answer = [];
-	var rand_indexes = [];
-	var right_answers = ['Sabiha Gokcen'];
-	var questions = ['Who is the first female pilot?'];
-	var rand;
-	var i = 0;
-	document.getElementById('buttonfinish').style.visibility='hidden';
-	document.getElementById('buttonfinish').style.display='none';
+	var database = firebase.database(),
+		ref = database.ref('questions'),
+		qCounter = 1,
+		user_answer = [],
+		rand_indexes = [],
+		right_answers = ['Sabiha Gokcen'],
+		questions = ['Who is the first female pilot?'],
+		rand,
+		i = 0;
+	let btnA = document.getElementById('buttonA'),
+		btnB = document.getElementById('buttonB'),
+		btnC = document.getElementById('buttonC'),
+		btnD = document.getElementById('buttonD'),
+		aChoice = document.getElementById('aChoice'),
+		bChoice = document.getElementById('bChoice'),
+		cChoice = document.getElementById('cChoice'),
+		dChoice = document.getElementById('dChoice'),
+		qNum = document.getElementById('qNum'),
+		question = document.getElementById('question');
+
+	//DOM elements
+	let buttonFinish = document.getElementById('buttonFinish'),
+		buttonNext = document.getElementById('buttonNext');
+
+	buttonFinish.style.visibility = 'hidden';
+	buttonFinish.style.display = 'none';
 
 	while (i < 12) {
 		rand = Math.ceil(Math.random() * 31);
@@ -40,90 +51,103 @@ export function FirebaseInit() {
 		}
 	}
 	console.warn(rand_indexes);
-	document.getElementById('buttonfinish').addEventListener('click', function() {
+	document;
+	buttonFinish.addEventListener('click', function() {
 		var count = 0;
-		for(var x=0;x<12;x++){
+		for (var x = 0; x < 12; x++) {
 			if (right_answers[x] === user_answer[x]) {
 				count++;
 			}
 		}
 		alert('You got ' + count + ' of out of 12 questions right!');
 	});
-	document.getElementById('buttonnext').addEventListener('click', function(e) {
+	buttonNext.addEventListener('click', function(e) {
 		if (qCounter < 11) {
 			e.preventDefault();
-			document.getElementById('buttonfinish').style.visibility='hidden';
-			document.getElementById('buttonfinish').style.display='none';
+			buttonFinish.style.visibility = 'hidden';
+			buttonFinish.style.display = 'none';
 			ref.on('value', reloadquestion, errData);
 		} else if (qCounter == 11) {
 			e.preventDefault();
 			ref.on('value', reloadquestion, errData);
-			document.getElementById('buttonnext').style.visibility='hidden';
-			document.getElementById('buttonnext').style.display='none';
-			document.getElementById('buttonfinish').style.visibility='visible';
-			document.getElementById('buttonfinish').style.display='inherit';
+			buttonNext.style.visibility = 'hidden';
+			buttonNext.style.display = 'none';
+			buttonFinish.style.visibility = 'visible';
+			buttonFinish.style.display = 'inherit';
 		} else if (qCounter == 12) {
-			document.getElementById('buttonfinish').style.visibility='visible';
+			buttonFinish.style.visibility = 'visible';
 		}
-
 	});
 
-	document.getElementById('buttona').onclick = function () {
-		user_answer[qCounter - 1] = document.getElementById('a').innerHTML;
-		document.getElementById('buttona').setAttribute('style', 'background-color: #A40E4C');
-		document.getElementById('buttonb').setAttribute('style', 'background-color: #FFFFFF');
-		document.getElementById('buttonc').setAttribute('style', 'background-color: #FFFFFF');
-		document.getElementById('buttond').setAttribute('style', 'background-color: #FFFFFF');
+	btnA.onclick = function() {
+		user_answer[qCounter - 1] = aChoice.innerHTML;
+		btnA.setAttribute('style', 'background-color: #A40E4C');
+		btnB.setAttribute('style', 'background-color: #FFFFFF');
+		btnC.setAttribute('style', 'background-color: #FFFFFF');
+		btnD.setAttribute('style', 'background-color: #FFFFFF');
 		console.warn(user_answer);
-	}
-	document.getElementById('buttonb').onclick = function () {
-		user_answer[qCounter - 1] = document.getElementById('b').innerHTML;
-		document.getElementById('buttona').setAttribute('style', 'background-color: #FFFFFF');
-		document.getElementById('buttonb').setAttribute('style', 'background-color: #A40E4C');
-		document.getElementById('buttonc').setAttribute('style', 'background-color: #FFFFFF');
-		document.getElementById('buttond').setAttribute('style', 'background-color: #FFFFFF');
+	};
+	btnB.onclick = function() {
+		user_answer[qCounter - 1] = bChoice.innerHTML;
+		btnA.setAttribute('style', 'background-color: #FFFFFF');
+		btnB.setAttribute('style', 'background-color: #A40E4C');
+		btnC.setAttribute('style', 'background-color: #FFFFFF');
+		btnD.setAttribute('style', 'background-color: #FFFFFF');
 		console.warn(user_answer);
-	}
-	document.getElementById('buttonc').onclick = function () {
-		user_answer[qCounter - 1] = document.getElementById('c').innerHTML;
-		document.getElementById('buttona').setAttribute('style', 'background-color: #FFFFFF');
-		document.getElementById('buttonb').setAttribute('style', 'background-color: #FFFFFF');
-		document.getElementById('buttonc').setAttribute('style', 'background-color: #A40E4C');
-		document.getElementById('buttond').setAttribute('style', 'background-color: #FFFFFF');
+	};
+	btnC.onclick = function() {
+		user_answer[qCounter - 1] = cChoice.innerHTML;
+		btnA.setAttribute('style', 'background-color: #FFFFFF');
+		btnB.setAttribute('style', 'background-color: #FFFFFF');
+		btnC.setAttribute('style', 'background-color: #A40E4C');
+		btnD.setAttribute('style', 'background-color: #FFFFFF');
 		console.warn(user_answer);
-	}
-	document.getElementById('buttond').onclick = function () {
-		user_answer[qCounter - 1] = document.getElementById('d').innerHTML;
-		document.getElementById('buttona').setAttribute('style', 'background-color: #FFFFFF');
-		document.getElementById('buttonb').setAttribute('style', 'background-color: #FFFFFF');
-		document.getElementById('buttonc').setAttribute('style', 'background-color: #FFFFFF');
-		document.getElementById('buttond').setAttribute('style', 'background-color: #A40E4C');
+	};
+	btnD.onclick = function() {
+		user_answer[qCounter - 1] = dChoice.innerHTML;
+		btnA.setAttribute('style', 'background-color: #FFFFFF');
+		btnB.setAttribute('style', 'background-color: #FFFFFF');
+		btnC.setAttribute('style', 'background-color: #FFFFFF');
+		btnD.setAttribute('style', 'background-color: #A40E4C');
 		console.warn(user_answer);
-	}
-	function reloadquestion (data) {
-		if (typeof(user_answer[qCounter -1]) == 'undefined') {
+	};
+	function reloadquestion(data) {
+		if (typeof user_answer[qCounter - 1] == 'undefined') {
 			alert('Choose an answer');
 		} else {
 			increaseCount();
-			document.getElementById('num').innerHTML = qCounter;
-			document.getElementById('question').innerHTML = data.val()[rand_indexes[qCounter - 1]].question;
-			right_answers[qCounter - 1] = data.val()[rand_indexes[qCounter - 1]].answer;
-			questions[qCounter - 1] = data.val()[rand_indexes[qCounter - 1]].question;
-			document.getElementById('a').innerHTML = data.val()[rand_indexes[qCounter-1]].choices[0];
-			document.getElementById('b').innerHTML = data.val()[rand_indexes[qCounter - 1]].choices[1];
-			document.getElementById('c').innerHTML = data.val()[rand_indexes[qCounter - 1]].choices[2];
-			document.getElementById('d').innerHTML = data.val()[rand_indexes[qCounter - 1]].choices[3];
-			document.getElementById('buttona').setAttribute('style', 'background-color: #FFFFFF');
-			document.getElementById('buttonb').setAttribute('style', 'background-color: #FFFFFF');
-			document.getElementById('buttonc').setAttribute('style', 'background-color: #FFFFFF');
-			document.getElementById('buttond').setAttribute('style', 'background-color: #FFFFFF');
+			qNum.innerHTML = qCounter;
+			question.innerHTML = data.val()[
+				rand_indexes[qCounter - 1]
+			].question;
+			right_answers[qCounter - 1] = data.val()[
+				rand_indexes[qCounter - 1]
+			].answer;
+			questions[qCounter - 1] = data.val()[
+				rand_indexes[qCounter - 1]
+			].question;
+			aChoice.innerHTML = data.val()[
+				rand_indexes[qCounter - 1]
+			].choices[0];
+			bChoice.innerHTML = data.val()[
+				rand_indexes[qCounter - 1]
+			].choices[1];
+			cChoice.innerHTML = data.val()[
+				rand_indexes[qCounter - 1]
+			].choices[2];
+			dChoice.innerHTML = data.val()[
+				rand_indexes[qCounter - 1]
+			].choices[3];
+			btnA.setAttribute('style', 'background-color: #FFFFFF');
+			btnB.setAttribute('style', 'background-color: #FFFFFF');
+			btnC.setAttribute('style', 'background-color: #FFFFFF');
+			btnD.setAttribute('style', 'background-color: #FFFFFF');
 			console.warn(qCounter);
-			
 		}
 	}
-	console.warn(document.getElementById('d'));
+	console.warn(dChoice);
 
-	function increaseCount () {
+	function increaseCount() {
 		++qCounter;
 	}
 
@@ -131,6 +155,4 @@ export function FirebaseInit() {
 		console.warn('Error!');
 		console.warn(err);
 	}
-
-	
 }
