@@ -23,28 +23,24 @@ export function FirebaseInit() {
 	var ref = database.ref('questions');
 	var qCounter = 1;
 	var user_answer = [];
-<<<<<<< HEAD
-
-	
-	
-
-	function gotData(data) {
-		// console.warn(data.val());
-		// console.warn(typeof data.val());
-		// console.warn(data.val()[2].choices[0]);
-		document.getElementById('num').innerHTML = '#'+qCounter;
-		document.getElementById('question').innerHTML = data.val()[qCounter].question;
-		document.getElementById('a').innerHTML = data.val()[qCounter].choices[0];
-		document.getElementById('b').innerHTML = data.val()[qCounter].choices[1];
-		document.getElementById('c').innerHTML = data.val()[qCounter].choices[2];
-		document.getElementById('d').innerHTML = data.val()[qCounter].choices[3];
-
-		//document.getElementById('next').onclick = function() {increaseCount()};
-
+	var rand_indexes = [];
+	var rand;
+	var i = 0
+	while (i < 12) {
+		rand = Math.ceil(Math.random() * 31);
+		console.warn(rand);
+		if (rand_indexes.indexOf(rand) == -1) {
+			rand_indexes[i] = rand;
+			i++;
+		}
 	}
+	console.warn(rand_indexes);
 
+<<<<<<< HEAD
 	document.getElementById('next').addEventListener('click', function(e) {
 		
+=======
+>>>>>>> e375afce1b942b46bf6874f3be7e10a44d33b027
 	document.getElementById('buttonnext').addEventListener('click', function(e) {
 		if (qCounter < 11) {
 			e.preventDefault();
@@ -82,11 +78,11 @@ export function FirebaseInit() {
 		else {
 			increaseCount();
 			document.getElementById('num').innerHTML = qCounter;
-			document.getElementById('question').innerHTML = data.val()[qCounter].question;
-			document.getElementById('a').innerHTML = data.val()[qCounter].choices[0];
-			document.getElementById('b').innerHTML = data.val()[qCounter].choices[1];
-			document.getElementById('c').innerHTML = data.val()[qCounter].choices[2];
-			document.getElementById('d').innerHTML = data.val()[qCounter].choices[3];
+			document.getElementById('question').innerHTML = data.val()[rand_indexes[qCounter - 1]].question;
+			document.getElementById('a').innerHTML = data.val()[rand_indexes[qCounter-1]].choices[0];
+			document.getElementById('b').innerHTML = data.val()[rand_indexes[qCounter - 1]].choices[1];
+			document.getElementById('c').innerHTML = data.val()[rand_indexes[qCounter - 1]].choices[2];
+			document.getElementById('d').innerHTML = data.val()[rand_indexes[qCounter - 1]].choices[3];
 			console.warn(qCounter);
 			
 		}
