@@ -44,9 +44,8 @@ export function FirebaseInit() {
 	}
 
 	document.getElementById('next').addEventListener('click', function(e) {
-=======
+		
 	document.getElementById('buttonnext').addEventListener('click', function(e) {
->>>>>>> d0faed5356a8295460a8801790a167d49cee6ce2
 		if (qCounter < 11) {
 			e.preventDefault();
 			ref.on('value', reloadquestion, errData);
@@ -58,7 +57,7 @@ export function FirebaseInit() {
 			document.getElementById('finish').setAttribute('href', 'results.html');
 		}
 
-	})
+	});
 
 	document.getElementById('buttona').onclick = function () {
 		user_answer[qCounter - 1] = document.getElementById('a').innerHTML;
@@ -79,7 +78,8 @@ export function FirebaseInit() {
 	function reloadquestion (data) {
 		if (typeof(user_answer[qCounter -1]) == 'undefined') {
 			alert('Choose an answer')
-		} else {
+		} 
+		else {
 			increaseCount();
 			document.getElementById('num').innerHTML = qCounter;
 			document.getElementById('question').innerHTML = data.val()[qCounter].question;
