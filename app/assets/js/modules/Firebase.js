@@ -44,7 +44,10 @@ export function FirebaseInit() {
 		} else if (qCounter == 11) {
 			e.preventDefault();
 			ref.on('value', reloadquestion, errData);
-			document.getElementById('next').innerHTML = 'FINISH';
+			document.getElementById('buttonnext').style.visibility='hidden';
+			document.getElementById('buttonnext').style.display='none';
+			document.getElementById('buttonfinish').style.visibility='visible';
+			document.getElementById('buttonfinish').style.display='inherit';
 		} else if (qCounter == 12) {
 			document.getElementById('buttonfinish').style.visibility='visible';
 		}
