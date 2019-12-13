@@ -24,6 +24,8 @@ export function FirebaseInit() {
 	var qCounter = 1;
 	var user_answer = [];
 	var rand_indexes = [];
+	var right_answers = ['Sabiha Gokcen'];
+	var questions = ['Who is the first female pilot?'];
 	var rand;
 	var i = 0;
 	document.getElementById('buttonfinish').style.visibility='hidden';
@@ -38,11 +40,14 @@ export function FirebaseInit() {
 		}
 	}
 	console.warn(rand_indexes);
-	document.getElementById('buttonfinish').addEventListener('click', function(e) {
+	document.getElementById('buttonfinish').addEventListener('click', function() {
+		var count = 0;
 		for(var x=0;x<12;x++){
-			
+			if (right_answers[x] === user_answer[x]) {
+				count++;
+			}
 		}
-
+		alert('You got ' + count + ' of out of 12 questions right!');
 	});
 	document.getElementById('buttonnext').addEventListener('click', function(e) {
 		if (qCounter < 11) {
@@ -102,6 +107,8 @@ export function FirebaseInit() {
 			increaseCount();
 			document.getElementById('num').innerHTML = qCounter;
 			document.getElementById('question').innerHTML = data.val()[rand_indexes[qCounter - 1]].question;
+			right_answers[qCounter - 1] = data.val()[rand_indexes[qCounter - 1]].answer;
+			questions[qCounter - 1] = data.val()[rand_indexes[qCounter - 1]].question;
 			document.getElementById('a').innerHTML = data.val()[rand_indexes[qCounter-1]].choices[0];
 			document.getElementById('b').innerHTML = data.val()[rand_indexes[qCounter - 1]].choices[1];
 			document.getElementById('c').innerHTML = data.val()[rand_indexes[qCounter - 1]].choices[2];
