@@ -25,7 +25,10 @@ export function FirebaseInit() {
 	var user_answer = [];
 	var rand_indexes = [];
 	var rand;
-	var i = 0
+	var i = 0;
+	document.getElementById('buttonfinish').style.visibility='hidden';
+	document.getElementById('buttonfinish').style.display='none';
+
 	while (i < 12) {
 		rand = Math.ceil(Math.random() * 31);
 		console.warn(rand);
@@ -35,6 +38,12 @@ export function FirebaseInit() {
 		}
 	}
 	console.warn(rand_indexes);
+	document.getElementById('buttonfinish').addEventListener('click', function(e) {
+		for(var x=0;x<12;x++){
+			
+		}
+
+	});
 	document.getElementById('buttonnext').addEventListener('click', function(e) {
 		if (qCounter < 11) {
 			e.preventDefault();
