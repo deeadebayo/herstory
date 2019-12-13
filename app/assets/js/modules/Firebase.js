@@ -35,7 +35,6 @@ export function FirebaseInit() {
 		}
 	}
 	console.warn(rand_indexes);
-
 	document.getElementById('buttonnext').addEventListener('click', function(e) {
 		if (qCounter < 11) {
 			e.preventDefault();
@@ -48,7 +47,7 @@ export function FirebaseInit() {
 			document.getElementById('finish').setAttribute('href', 'results.html');
 		}
 
-	})
+	});
 
 	document.getElementById('buttona').onclick = function () {
 		user_answer[qCounter - 1] = document.getElementById('a').innerHTML;
