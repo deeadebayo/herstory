@@ -22,28 +22,8 @@ export function FirebaseInit() {
 	var database = firebase.database();
 	var ref = database.ref('questions');
 	var qCounter = 1;
-	ref.on('value', gotData, errData);
 	var user_answer = [];
-
-	
-	
-
-	function gotData(data) {
-		// console.warn(data.val());
-		// console.warn(typeof data.val());
-		// console.warn(data.val()[2].choices[0]);
-		document.getElementById('num').innerHTML = qCounter;
-		document.getElementById('question').innerHTML = data.val()[qCounter].question;
-		document.getElementById('a').innerHTML = data.val()[qCounter].choices[0];
-		document.getElementById('b').innerHTML = data.val()[qCounter].choices[1];
-		document.getElementById('c').innerHTML = data.val()[qCounter].choices[2];
-		document.getElementById('d').innerHTML = data.val()[qCounter].choices[3];
-
-		//document.getElementById('next').onclick = function() {increaseCount()};
-
-	}
-
-	document.getElementById('next').addEventListener('click', function(e) {
+	document.getElementById('buttonnext').addEventListener('click', function(e) {
 		if (qCounter < 11) {
 			e.preventDefault();
 			ref.on('value', reloadquestion, errData);
@@ -57,19 +37,19 @@ export function FirebaseInit() {
 
 	})
 
-	document.getElementById('a').onclick = function () {
+	document.getElementById('buttona').onclick = function () {
 		user_answer[qCounter - 1] = document.getElementById('a').innerHTML;
 		console.warn(user_answer);
 	}
-	document.getElementById('b').onclick = function () {
+	document.getElementById('buttonb').onclick = function () {
 		user_answer[qCounter - 1] = document.getElementById('b').innerHTML;
 		console.warn(user_answer);
 	}
-	document.getElementById('c').onclick = function () {
+	document.getElementById('buttonc').onclick = function () {
 		user_answer[qCounter - 1] = document.getElementById('c').innerHTML;
 		console.warn(user_answer);
 	}
-	document.getElementById('d').onclick = function () {
+	document.getElementById('buttond').onclick = function () {
 		user_answer[qCounter - 1] = document.getElementById('d').innerHTML;
 		console.warn(user_answer);
 	}
