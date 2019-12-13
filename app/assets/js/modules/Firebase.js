@@ -23,9 +23,9 @@ export function FirebaseInit() {
 	var ref = database.ref('questions');
 	var qCounter = 1;
 	var user_answer = [];
-	var rand_indexes = [];
+	var rand_indexes = [1];
 	var rand;
-	var i = 0
+	var i = 1;
 	while (i < 12) {
 		rand = Math.ceil(Math.random() * 31);
 		console.warn(rand);
