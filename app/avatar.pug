@@ -20,7 +20,7 @@ block content
     img(src='public/img/Logo.png' alt='logo')
     p Select your avatar and press the 'START' button
     .avatar-selector
-        section(onclick="getAvatar('public/img/Frida.png')")
+        section(id='frida', onclick="function hi(){document.getElementById('maya').setAttribute('style','background-color: #ffffff');document.getElementById('virginia').setAttribute('style','background-color: #ffffff');document.getElementById('frida').setAttribute('style','background-color: #7c8086');document.getElementById('joan').setAttribute('style','background-color: #ffffff');};hi()")
             .selector-img
                 img.avt(src='public/img/Frida.png' alt='Frida')
                 h4 Frida Kahlo
@@ -29,7 +29,7 @@ block content
                     Artist Frida Kahlo was considered one of Mexico's greatest artists who began painting mostly self-portraits after she was severely injured in a bus accident.
                     Kahlo later became politically active and married fellow communist artist Diego Rivera in 1929. She exhibited her paintings in Paris and Mexico before her death
                     in 1954.After Kahlo’s death, the feminist movement of the 1970s led to renewed interest in her life and work, as Kahlo was viewed by many as an icon of female creativity.
-        section(onclick="getAvatar('public/img/Joan.png')")
+        section(id='joan', onclick="function hi(){document.getElementById('maya').setAttribute('style','background-color: #ffffff');document.getElementById('virginia').setAttribute('style','background-color: #ffffff');document.getElementById('frida').setAttribute('style','background-color: #ffffff');document.getElementById('joan').setAttribute('style','background-color: #7c8086');};hi()")
             .selector-img
                 img.avt(src='public/img/Joan.png' alt='Joan')
                 h4 Joan of Arc
@@ -38,7 +38,7 @@ block content
                     Joan of Arc, nicknamed "The Maid of Orléans," was born in 1412 in Domrémy, Bar, France. A national heroine of France, at age 18 she led the French army to victory over the
                     English at Orléans. Captured a year later, Joan was burned at the stake as a heretic by the English and their French collaborators. She was canonized as a Roman Catholic saint more
                     than 500 years later, on May 16, 1920.
-        section(onclick="getAvatar('public/img/Maya.png')")
+        section(id='maya', onclick="function hi(){document.getElementById('maya').setAttribute('style','background-color: #7c8086');document.getElementById('virginia').setAttribute('style','background-color: #ffffff');document.getElementById('frida').setAttribute('style','background-color: #ffffff');document.getElementById('joan').setAttribute('style','background-color: #ffffff');};hi()")
             .selector-img
                 img.avt(src='public/img/Maya.png' alt='Maya')
                 h4 Maya Angelou
@@ -47,7 +47,7 @@ block content
                     Maya Angelou was an American poet, singer, memoirist, and civil rights activist. She published seven autobiographies, three books of essays, several books of poetry, and is
                     credited with a list of plays, movies, and television shows spanning over 50 years.One of her famous quotes  is  "I am a feminist. I've been female for a long time now. I'd be
                     stupid not to be on my own side."
-        section(onclick="getAvatar('public/img/Virginia.png')")
+        section(id='virginia', onclick="function hi(){document.getElementById('maya').setAttribute('style','background-color: #ffffff');document.getElementById('virginia').setAttribute('style','background-color: #7c8086');document.getElementById('frida').setAttribute('style','background-color: #ffffff');document.getElementById('joan').setAttribute('style','background-color: #ffffff');};hi()")
             .selector-img
                 img.avt(src='public/img/Virginia.png' alt='Virginia')
                 h4 Virginia Woolfe
