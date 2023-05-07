@@ -28,7 +28,7 @@
 		"autoprefixer": "^9.7.3",
 		"babel-core": "^6.26.3",
 		"babel-loader": "^8.0.6",
-		"browser-sync": "^2.26.7",
+		"browser-sync": "^2.29.1",
 		"browserslist": "^4.8.2",
 		"css-loader": "^3.3.0",
 		"del": "^5.1.0",
